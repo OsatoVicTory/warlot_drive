@@ -1,0 +1,206 @@
+.lp_sidebar {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+.lps_true {
+    transform: translateX(0%);
+}
+.hero_grid_card {
+    background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(180deg, rgba(1, 127, 131, 0) 50%, rgba(1, 127, 131, 0.0415385) 78.4%, rgba(1, 127, 131, 0.09) 111.53%);
+    box-shadow: 0px 4px 20px 0px #C7C7C740 inset;
+}
+.hero_grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 
+    [col-start] calc(25% - 15px)
+    [col-1] calc(25% - 15px)
+    [col-2] calc(25% - 15px)
+    [col-3] calc(25% - 15px)
+    [col-end] 
+  ;
+  grid-template-rows: 210px 210px;
+  gap: 18px;
+}
+.hero_grid > div {
+  background-color: #a5a4a4;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero_grid_img_cover {
+  width: 100%;
+  height: 100%;
+}
+.hero_2 {
+    padding: 10px;
+}
+.hero_img_2 {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+.grow_col {
+  grid-column-start: col-2;
+  grid-column-end: span col-end;
+}
+.grow_row {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.hero_3 {
+    border: 1px solid #2828281A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFFFF !important;
+}
+.hero_3 img {
+    width: 80%;
+    height: 126px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.hero_3 > div {
+    position: relative;
+}
+.hero_3 > div::before {
+    content: "";
+    position: absolute;
+    bottom: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    transform: rotate(45deg);
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-green-3);
+}
+.Features {
+    width: 100%;
+}
+.features_card {
+    width: 30%;
+    box-shadow: 40px 40px 120px 0px #2E2F3A0A;
+    border: 1px solid #F5F5F5;
+    height: 100%;
+}
+
+.Tools_lists {
+    width: min(554px, 100%);
+}
+.toolToggle {
+    height: max-content;
+}
+.tT_grow, .Faq_toggle {
+    height: 0px;
+    interpolate-size: allow-keywords;
+    transition: height 0.3s ease;
+    overflow: hidden;
+}
+.tT_grow {
+    padding-top: 8px;
+}
+.Faq_toggle {
+    margin-top: 0px;
+}
+.tT_true .tT_grow, .Faq_toggle_true {
+    height: fit-content;
+}
+.Faq_toggle_true {
+    margin-top: 10px;
+}
+.Signup_sect {
+    background-image: url("../../../public/background-spiral.png");
+    background-position: center;
+    /* background-size: contain; */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.Signup_spiral {
+    position: absolute;
+    top: 50%;
+    left: 105%;
+    z-index: 1;
+}
+.Signup_spiral svg {
+    width: 100px;
+    height: 90px;
+}
+.Footer_logo {
+    width: min(100%, 400px);
+}
+.Footer_logo > a {
+    width: fit-content;
+}
+.Footer_icons {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    margin-left: 15px;
+}
+.Footer_icons:first-child {
+    margin-left: 0px;
+}
+.Footer_icons svg {
+    width: 24px;
+    height: 24px;
+    color: var(--grey-600);
+}
+
+@media screen and (max-width: 1024px) {
+    .features_card {
+        width: calc(33.33% - 10px);
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .features_card {
+        width: 100%;
+        margin-top: 12px;
+    }
+    .features_card:first-child {
+        margin-top: 0px;
+    }
+    .features_card svg {
+        width: 60px;
+        height: 60px;
+    }
+    .hero_grid {
+        grid-template-columns: 
+            [col-start] calc(50% - 5px)
+            [col-1] calc(50% - 5px)
+            [col-end] 
+        ;
+        grid-template-rows: 180px 180px;
+        gap: 10px;
+    }
+    .hero_grid > div {
+        display: none;
+    }
+    .hero_3, .grow_row, .hero_2 {
+        display: flex !important;
+    }
+    .hero_3 img {
+        height: 105px;
+    }
+}
+
+@media screen and (max-width: 500px) { 
+    .Signup_spiral {
+        left: 100%;
+    }
+    .Signup_spiral svg {
+        width: 80px;
+        height: 50px;
+    }
+    .Signup_sect {
+        background-size: 100% 100%;
+    }
+}
