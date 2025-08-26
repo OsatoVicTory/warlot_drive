@@ -1,0 +1,38 @@
+.LayoutMain_true {
+    width: calc(100% - 270px);
+}
+.LayoutMain_false {
+    width: calc(100% - 90px);
+}
+@media screen and (max-width: 768px) {
+    .LayoutMain_true, .LayoutMain_false {
+        width: 100%;
+    }
+    .Sidebar {
+        width: 100% !important;
+        height: 100%;
+        position: fixed;
+        top: 0px;
+        z-index: 999999;
+        background-color: rgba(27, 27, 27, 0.6);
+        transition: visibility 0.3s ease-in-out;
+    }
+    .Sidebar_true {
+        visibility: visible;
+    }
+    .Sidebar > div {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    .Sidebar > div {
+        width: 270px;
+        height: 100%;
+        background-color: #fff;
+    }
+    .Sidebar_false {
+        visibility: hidden;
+    }
+    .Sidebar_true > div {
+        transform: translateX(0%);
+    }
+}
