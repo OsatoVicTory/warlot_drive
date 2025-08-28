@@ -4,7 +4,7 @@ import { AudioIcon, BucketIcon, DocumentIcon, EmailIcon, FilePlaceholderIcon, Fl
 import AppLayout from "@/layout";
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
-import FileModal from "../../components/ui/drive/fileModaldal";
+import FileModal from "../../components/modals/drive/fileModal";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 
 export default function Encrypted() {
