@@ -6,11 +6,13 @@ import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import FileModal from "../../components/modals/drive/fileModal";
 import { BsFillCheckCircleFill } from "react-icons/bs";
+import ShareFileModal from "@/components/modals/drive/shareFileModal";
 
 export default function Encrypted() {
 
     const [showDaysLeft, setShowDaysLeft] = useState(true);
     const [modalOpen, setModalOpen] = useState(false);
+    const [shareModal, setShareModal] = useState(false);
 
     const files = Array(2).fill([
         {
@@ -133,7 +135,9 @@ export default function Encrypted() {
                 </div>
             </div>
 
-            <FileModal toggle={(bool) => setModalOpen(bool)} isOpen={modalOpen} />
+            <FileModal toggle={(bool) => setModalOpen(bool)} isOpen={modalOpen} setShareModal={(bool) => setShareModal(bool)} />
+            
+            {shareModal && <ShareFileModal toggle={(bool) => setShareModal(bool)} />}
 
         </AppLayout>
     )
